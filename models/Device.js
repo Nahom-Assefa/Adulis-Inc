@@ -14,27 +14,43 @@ const DeviceSchema = new Schema(
       required: true,
       trim: true,
     },
+    imei: {
+      type: String,
+      required: true,
+      maxlength: 20,
+      minlength: 10,
+    },
+    carrier: {
+      type: String,
+      required: true,
+      enum: ["Verizon", "T-Mobile", "ATT", "Dish", "Other"],
+      default: "Other",
+      trim: true,
+    },
+    storage: {
+      type: String,
+      required: true,
+    },
+    condition: {
+      type: String,
+      required: true,
+      enum: ["New", "Used", "Cracked", "No Power", "Bad LCD"],
+      default: "Used",
+    },
     createdAt: {
       type: Date,
       default: Date.now,
       get: (createdAtVal) => dateFormat(createdAtVal),
     },
-    users: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "User",
-      },
-    ],
   },
   {
     toJSON: {
-      virtuals: true,
       getters: true,
     },
     id: false,
   }
 );
 
-
-
 const Device = model("Device", DeviceSchema);
+
+module.exports = Device;
