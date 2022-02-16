@@ -22,8 +22,12 @@
     <link rel="stylesheet" href="../../assets/icons/font-awesome-4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../../assets/plugins/css/bootstrap.min.css">
+    <!-- Animate CSS-->
+    <link rel="stylesheet" href="../../assets/plugins/css/animate.css">
     <!-- Owl Carousel CSS-->
     <link rel="stylesheet" href="../../assets/plugins/css/owl.css">
+    <!-- Fancybox-->
+    <link rel="stylesheet" href="../../assets/plugins/css/jquery.fancybox.min.css">
     <!-- Custom CSS-->
     <link rel="stylesheet" href="../../assets/css/styles.css">
     <!-- Responsive -->
@@ -83,99 +87,99 @@
             </div>
         </nav>
     </header>
-    <main>
-        <!--
+    <!--
         ===================
-          SELL DEVICE
-        ===================
-        -->
-        <section class="section relative section-separator">
-            <div class="cover-bg img-fluid sell--1"
-                style=" background-image: url(../../assets/images/sell-page-1.png); background-position: center center;">
-                <div class="container">
-                    <h3 class="sell2--heading section-title">It takes just a few minutes to sell your iPhone.</h3>
-                    <p class="sell1--paragraph section-title mb-5">Select your model from the following options.</p>
-                    <div class="col-md-6 mx-auto my-auto">
-
-                        <form action="">
-                            <div class="sell3--form">
-                                <div class="form-group">
-                                    <div class="input-group-prepend">
-                                        <label>Select your storage</label>
-                                    </div>
-                                    <select class="custom-select" id="inputGroupSelect01">
-                                        <option selected>64</option>
-                                        <option value="2">256</option>
-                                    </select>
-
-                                </div>
-                                <div class="form-group">
-                                    <div class="input-group-prepend">
-                                        <label>Select your carrier</label>
-                                    </div>
-                                    <select class="custom-select" id="inputGroupSelect02">
-                                        <option selected>Verizon</option>
-                                        <option value="1">T-Mobile</option>
-                                        <option value="2">ATT</option>
-                                        <option value="3">Dish</option>
-                                        <option value="4">Unlocked</option>
-                                        <option value="5">Other</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <div class="input-group-prepend">
-                                        <label>Select your condition</label>
-                                    </div>
-                                    <select class="custom-select" id="inputGroupSelect03">
-                                        <option selected>New</option>
-                                        <option value="1">Used</option>
-                                        <option value="2">Cracked</option>
-                                        <option value="3">Bad LCD</option>
-                                        <option value="3">No Power</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Additonal comments</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" cols="50"
-                                        placeholder="Additonal comments" style="height: 90px;"></textarea>
-                                </div>
-                                <div class="mt-4">
-                                    <a href="sell/offer.html" class="btn btn-fill6 btn-block">Get an
-                                        offer </a>
-                                </div>
-                            </div>
-                        </form>
-
-
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--
-        ===================
-         SUBSCRIPTION
+            SELL DEVICE 
         ===================
         -->
-        <section class="section sub-Newsletter section-separator">
+    <section class="section relative section-separator">
+        <div class="cover-bg img-fluid sell--1"
+            style=" background-image: url(../../assets/images/sell-page-1.png); background-position: center center;">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-2 col-sm-0"></div>
-                    <div class="col-md-8 col-sm-12 text-center">
-                        <h3 class="secondary--heading">Subscribe Newsletter & get Company News.</h3>
-                        <div class="input-group subscribe-input-button mt-5">
-                            <input type="text" class="form-control form_input" placeholder="Your email for subscribe"
-                                style="height: 60px;" />
-                            <div class="input-group-append ">
-                                <button class="btn2 subscribe-button" type="button">
-                                    <i class="fa fa-long-arrow-right fa-lg"></i>
-                                </button>
+                <h3 class="sell2--heading section-title">It takes just a few minutes to sell your iPhone.</h3>
+                <p class="sell1--paragraph section-title mb-5">Select your model from the following options.</p>
+                <div class="col-md-6 mx-auto my-auto">
+
+                    <form action="">
+                        <div class="sell3--form">
+                            <div class="form-group">
+                                <div class="input-group-prepend">
+                                    <label>Select your storage</label>
+                                </div>
+                                <select class="custom-select" id="inputGroupSelect01">
+                                    <option selected>128 GB</option>
+                                        <option value="2">256 GB</option>
+                                        <option value="3">512 GB</option>
+                                        <option value="4">1 TB</option>
+                                </select>
+
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group-prepend">
+                                    <label>Select your carrier</label>
+                                </div>
+                                <select class="custom-select" id="inputGroupSelect02">
+                                    <option selected>Verizon</option>
+                                    <option value="1">T-Mobile</option>
+                                    <option value="2">ATT</option>
+                                    <option value="3">Dish</option>
+                                    <option value="4">Unlocked</option>
+                                    <option value="5">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group-prepend">
+                                    <label>Select your condition</label>
+                                </div>
+                                <select class="custom-select" id="inputGroupSelect03">
+                                    <option selected>New</option>
+                                    <option value="1">Used</option>
+                                    <option value="2">Cracked</option>
+                                    <option value="3">Bad LCD</option>
+                                    <option value="3">No Power</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Additonal comments</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" cols="50"
+                                    placeholder="Additonal comments" style="height: 90px;"></textarea>
+                            </div>
+                            <div class="mt-4">
+                                <a href="sell/offer.html" class="btn btn-fill6 btn-block">Get
+                                    an offer </a>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-2"></div>
+                    </form>
+
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+    <!--
+        ===================
+           SUBSCRIPTION
+        ===================
+        -->
+    <section class="section sub-Newsletter section-separator">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 col-sm-0"></div>
+                <div class="col-md-8 col-sm-12 text-center">
+                    <h3 class="secondary--heading">Subscribe Newsletter & get Company News.</h3>
+                    <div class="input-group subscribe-input-button mt-5">
+                        <input type="text" class="form-control form_input" placeholder="Your email for subscribe"
+                            style="height: 60px;" />
+                        <div class="input-group-append ">
+                            <button class="btn2 subscribe-button" type="button">
+                                <i class="fa fa-long-arrow-right fa-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </section>
     </main>
     <!--
         ===================
@@ -230,20 +234,11 @@
     <script src="../../assets/plugins/js/owl.carousel.js"></script>
     <!-- validator -->
     <script src="../../assets/plugins/js/validator.min.js"></script>
-    <!--  -->
-    <script src="https://rawgit.com/eAdnan007/jquery-countdown/master/jquery.countdown.min.js"></script>
-    <!-- wow -->
-    <script src="../../assets/plugins/js/wow.min.js"></script>
     <!-- jquery nav -->
     <script src="../../assets/plugins/js/jquery.nav.js"></script>
-    <!-- Fancybox js-->
-    <script src="../../assets/plugins/js/jquery.fancybox.min.js"></script>
     <!-- isotope js-->
     <script src="../../assets/plugins/js/isotope.pkgd.js"></script>
     <script src="../../assets/plugins/js/packery-mode.pkgd.js"></script>
-    <!-- counterup -->
-    <script src="../../assets/plugins/js/jquery.counterup.min.js"></script>
-
     <script src="../../assets/plugins/js/particles.min.js"></script>
     <!-- Custom Scripts-->
     <script src="../../assets/js/custom-scripts.js"></script>
