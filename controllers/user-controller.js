@@ -38,6 +38,7 @@ const userController = {
   },
 
   updateUser({ params, body }, res) {
+      console.log(params);
     User.findOneAndUpdate({ _id: params.id }, body, { new: true })
       .then((dbUserData) => {
         if (!dbUserData) {
