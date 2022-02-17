@@ -12,7 +12,8 @@ const deviceController = {
   },
 
   getOneDevice({ params }, res) {
-    User.findById({ _id: params.id })
+      console.log(params);
+    Device.findById({ _id: params.deviceId })
       .then((dbUserData) => {
         if (!dbUserData) {
           res.json({ message: "No Device associated with this id!" });
@@ -66,7 +67,7 @@ const deviceController = {
   },
 
   deleteDevice({ params }, res) {
-    User.findOneAndDelete({ _id: params.deviceId })
+    Device.findOneAndDelete({ _id: params.deviceId })
       .then((dbDeviceData) => {
         if (!dbDeviceData) {
           res.json({ message: "No Device associated with this id!" });

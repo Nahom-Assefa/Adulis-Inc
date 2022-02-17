@@ -4,7 +4,7 @@ const userRoutes = require("./user-routes");
 
 
 router.use("/users", userRoutes);
-router.use("/device", deviceRoutes);
+router.use("/devices", deviceRoutes);
 
 
 module.exports = router;

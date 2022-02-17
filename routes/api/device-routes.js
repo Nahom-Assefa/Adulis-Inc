@@ -22,7 +22,7 @@ router
 .post(addDevice)
 
 router
-.route("/:userId/:deviceId")
+.route("/:userId/super/:deviceId")
 .delete(deleteDevice)
 .put(updateDevice)
 
