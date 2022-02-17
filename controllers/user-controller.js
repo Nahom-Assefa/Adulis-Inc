@@ -3,6 +3,11 @@ const { User } = require("../models");
 const userController = {
   getAllUsers(req, res) {
     User.find({})
+      .populate({
+        path: "devices",
+        select: "-__v",
+      })
+      .select("-__v")
       .then((dbUserData) => {
         res.json(dbUserData);
       })
@@ -14,6 +19,10 @@ const userController = {
 
   getOneUser({ params }, res) {
     User.findById({ _id: params.id })
+      .populate({
+        path: "devices",
+        select: "-__v",
+      })
       .then((dbUserData) => {
         if (!dbUserData) {
           res.json({ message: "No User associated with this id!" });
@@ -38,7 +47,7 @@ const userController = {
   },
 
   updateUser({ params, body }, res) {
-      console.log(params);
+    console.log(params);
     User.findOneAndUpdate({ _id: params.id }, body, { new: true })
       .then((dbUserData) => {
         if (!dbUserData) {
