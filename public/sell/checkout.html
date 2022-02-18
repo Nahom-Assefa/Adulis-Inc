@@ -108,35 +108,35 @@
                                     <div class="ft-desc-des">
                                         <div class="">
                                             <div class="form-group">
-                                                <label for="">First name</label>
-                                                <input type="text" name="fname" class="form-control"
+                                                <label for="fname">First name</label>
+                                                <input type="text" id="fname" name="fname" class="form-control"
                                                     placeholder="Please type your first name" />
                                             </div>
                                             <div class="form-group">
-                                                <label for="">Last name</label>
-                                                <input type="text" name="lname" class="form-control"
+                                                <label for="lname">Last name</label>
+                                                <input type="text" id="lname" name="lname" class="form-control"
                                                     placeholder="Please type your last name" />
                                             </div>
                                             <div class="form-group">
-                                                <label for="">Email</label>
-                                                <input type="text" name="email" class="form-control"
+                                                <label for="email">Email</label>
+                                                <input type="text" id="email" name="email" class="form-control"
                                                     placeholder="Please type your email" />
                                             </div>
                                             <div class="form-group">
-                                                <label for="">Phone number</label>
-                                                <input type="text" class="form-control" name="phone"
+                                                <label for="phone">Phone number</label>
+                                                <input type="text" id="phone" name="phone" class="form-control" 
                                                     placeholder="Please type your phone number" />
                                             </div>
                                             <div class="form-group">
-                                                <label for="">City</label>
-                                                <input type="text" class="form-control" name="city"
+                                                <label for="city">City</label>
+                                                <input type="text" id="city" name="city" class="form-control"
                                                     placeholder="What city do you cuttently live in?" />
                                             </div>
                                             <div class="form-group">
                                                 <div class="input-group-prepend">
                                                     <label>How would you like to get paid?</label>
                                                 </div>
-                                                <select class="custom-select form-control" id="reason" name="reason">
+                                                <select class="custom-select form-control" id="payment" name="payment">
                                                     <option selected>Square (Cash App)</option>
                                                     <option value="1">Cash</option>
                                                     <option value="2">Paypal</option>
@@ -255,6 +255,7 @@
 
     <script src="../assets/plugins/js/particles.min.js"></script>
     <!-- Custom Scripts-->
+    <script src="../../public/assets/js/add-user.js"></script>
     <script src="../assets/js/custom-scripts.js"></script>
     <script>
         $('.close-div').on('click', function () {
