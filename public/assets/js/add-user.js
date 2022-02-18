@@ -13,14 +13,15 @@ function userSubmit(event) {
   const firstName = $userForm.querySelector("#fname").value;
   const lastName = $userForm.querySelector("#lname").value;
   const email = $userForm.querySelector("#email").value;
-  const phone = $userForm.querySelector("#phone").value;
-  const payment = $userForm.querySelector("#payment").value;
+  const phoneNumber = $userForm.querySelector("#phone").value;
+  const city = $userForm.querySelector("#city").value;
+  const payPref = $userForm.querySelector("#payment").value;
 
   if (!firstName || !lastName || !email || !phone || !payment) {
     return;
   }
 
-  const formData = { firstName, lastName, email, phone, payment };
+  const formData = { firstName, lastName, email, phoneNumber, city, payPref };
 
   fetch("api/users", {
     method: "Post",
