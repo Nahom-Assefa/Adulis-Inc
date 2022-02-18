@@ -24,6 +24,18 @@ const userSchema = new Schema(
       maxlength: 15,
       minlength: 10,
     },
+    city: {
+      type: String,
+      required: true,
+      maxlength: 25,
+      minlength: 2,
+    },
+    payPref: {
+      type: String,
+      required: true,
+      enum: ["Square", "Cash", "Paypal", "Bitcoin"],
+      default: "Paypal",
+    },
     devices: [
       {
         type: Schema.Types.ObjectId,
