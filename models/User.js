@@ -16,7 +16,7 @@ const userSchema = new Schema(
     email: {
       type: String,
       required: "Please enter a valid email!",
-      match: /^([a-z0-9_.-]+)@([\da-z.-]+)\.([a-z.]{2,6})$/,
+      match: /^([a-zA-Z0-9_.-]+)@([\da-zA-Z.-]+)\.([a-z.]{2,6})$/,
     },
     phoneNumber: {
       type: Number,
@@ -26,15 +26,13 @@ const userSchema = new Schema(
     },
     city: {
       type: String,
-      required: true,
       maxlength: 25,
       minlength: 2,
     },
     payPref: {
       type: String,
-      required: true,
       enum: ["Square", "Cash", "Paypal", "Bitcoin"],
-      default: "Paypal",
+      default: "Cash",
     },
     devices: [
       {

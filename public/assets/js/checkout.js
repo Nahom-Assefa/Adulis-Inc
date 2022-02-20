@@ -1,10 +1,3 @@
-// const submit = document.querySelector("#form-submit");
-// const firstName = document.querySelector("#fname");
-// const lastName = document.querySelector("#lname");
-// const email = document.querySelector("#email");
-// const phone = document.querySelector("#phone");
-// const payment = document.querySelector("#payment");
-
 const $userForm = document.querySelector("#registration-checkout");
 
 function userSubmit(event) {
@@ -17,7 +10,8 @@ function userSubmit(event) {
   const city = $userForm.querySelector("#city").value;
   const payPref = $userForm.querySelector("#payment").value;
 
-  if (!firstName || !lastName || !email || !phoneNumber || !payPref) {
+  if (!firstName || !lastName || !email || !phoneNumber) {
+    alert('You must provide input for all parts of the form!');
     return;
   }
 
