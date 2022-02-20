@@ -131,9 +131,9 @@
                       <label>Select your storage</label>
                     </div>
                     <select class="custom-select" id="inputGroupSelect01">
-                      <option selected>128 GB</option>
-                      <option value="2">256 GB</option>
-                      <option value="3">512 GB</option>
+                      <option selected value="128GB">128 GB</option>
+                      <option value="256GB">256 GB</option>
+                      <option value="512GB">512 GB</option>
                     </select>
                   </div>
                   <div class="form-group mt-5">
@@ -141,25 +141,35 @@
                       <label>Select your carrier</label>
                     </div>
                     <select class="custom-select" id="inputGroupSelect02">
-                      <option selected>Verizon</option>
-                      <option value="1">T-Mobile</option>
-                      <option value="2">ATT</option>
-                      <option value="3">Dish</option>
-                      <option value="4">Unlocked</option>
-                      <option value="5">Other</option>
-                  </select>
+                      <option selected value="Verizon">Verizon</option>
+                      <option value="T-Mobile">T-Mobile</option>
+                      <option value="ATT">ATT</option>
+                      <option value="Dish">Dish</option>
+                      <option value="Unlocked">Unlocked</option>
+                      <option value="Other">Other</option>
+                    </select>
                   </div>
                   <div class="form-group mt-5">
                     <div class="input-group-prepend">
                       <label>Select your condition</label>
                     </div>
                     <select class="custom-select" id="inputGroupSelect03">
-                      <option selected>New</option>
-                      <option value="1">Used</option>
-                      <option value="2">Cracked</option>
-                      <option value="3">Bad LCD</option>
-                      <option value="3">No Power</option>
+                      <option selected value="New">New</option>
+                      <option value="Used">Used</option>
+                      <option value="Cracked">Cracked</option>
+                      <option value="Bad LCD">Bad LCD</option>
+                      <option value="No Power">No Power</option>
                     </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="">Please enter the IMEI/MEID</label>
+                    <input
+                      type="text"
+                      id="imei"
+                      name="imei"
+                      class="form-control"
+                      placeholder="Imei/Meid"
+                    />
                   </div>
                   <div class="form-group mt-5">
                     <label for="">Additonal comments</label>
@@ -171,13 +181,52 @@
                       placeholder="Additonal comments"
                     ></textarea>
                   </div>
-                  <div class="mt-5">
-                    <a href="../offer.html" class="btn btn-fill6 btn-block"
-                      >Get an offer
-                    </a>
+                  <div class="mt-4">
+                    <a
+                      href=""
+                      data-toggle="modal"
+                      data-target="#form"
+                      class="btn btn-fill6 btn-block"
+                    >
+                      Get an offer</a
+                    >
                   </div>
                 </div>
               </form>
+
+              <!-- modal -->
+              <div
+                class="modal fade"
+                id="form"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content" style="padding: 20px">
+                    <form>
+                      <div class="modal-body">
+                        <div class="sell-card text-center">
+                          <h6>Your Adulis offer</h6>
+                          <h5>*Your estimated offer is</h5>
+                          <h3>$335</h3>
+                          <div class="">
+                            <a href="../checkout.html" class="btn-card"
+                              >Continue</a
+                            >
+                          </div>
+                          <p class="mt-4">
+                            <span>Note :</span> Please note that we do not
+                            accept devices that have been reported lost or
+                            stolen
+                          </p>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
