@@ -23,7 +23,7 @@ const DeviceSchema = new Schema(
     carrier: {
       type: String,
       required: true,
-      enum: ["Verizon", "T-Mobile", "ATT", "Dish", "Other"],
+      enum: ["Verizon", "T-Mobile", "ATT", "Dish", "Unlocked", "Other"],
       default: "Other",
       trim: true,
     },

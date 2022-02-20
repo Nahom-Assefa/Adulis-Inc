@@ -16,6 +16,7 @@ router
 router
 .route("/:deviceId")
 .get(getOneDevice)
+.put(updateDevice)
 
 router
 .route("/:userId")
@@ -24,7 +25,7 @@ router
 router
 .route("/:userId/super/:deviceId")
 .delete(deleteDevice)
-.put(updateDevice)
+
 
 
 module.exports = router;

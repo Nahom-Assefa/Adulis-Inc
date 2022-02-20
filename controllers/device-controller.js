@@ -7,12 +7,12 @@ const deviceController = {
         res.json(dbDeviceData);
       })
       .catch((err) => {
-        res.status(400).json(err);
+        res.status(500).json(err);
       });
   },
 
   getOneDevice({ params }, res) {
-      console.log(params);
+    console.log(params);
     Device.findById({ _id: params.deviceId })
       .then((dbUserData) => {
         if (!dbUserData) {
@@ -22,7 +22,7 @@ const deviceController = {
       })
       .catch((err) => {
         console.log(err);
-        res.status(400).json(err);
+        res.status(500).json(err);
       });
   },
 
@@ -38,58 +38,85 @@ const deviceController = {
       })
       .then((dbUserData) => {
         if (!dbUserData) {
-          res.status(404).json({ message: "No pizza found with this id!" });
+          res.status(404).json({ message: "No user found with this id!" });
           return;
         }
         res.json(dbUserData);
       })
-      .catch((err) => res.status(400).json(err));
+      .catch((err) => res.status(500).json(err));
   },
 
   updateDevice({ params, body }, res) {
     console.log(params);
     Device.findOneAndUpdate({ _id: params.deviceId }, body, { new: true })
-      .then((dbUserData) => {
-        if (!dbUserData) {
-          res.json({ message: "No Device associated with this id!" });
-        }
-        return User.findOneAndUpdate(
-          { _id: params.userId },
-          { $pull: { devices: params.deviceId } },
-          { $push: { devices: body } },
-          { new: true }
-        );
-      })
-      .catch((err) => {
-        console.log(err);
-        res.status(400).json(err);
-      });
-  },
-
-  deleteDevice({ params }, res) {
-    Device.findOneAndDelete({ _id: params.deviceId })
       .then((dbDeviceData) => {
         if (!dbDeviceData) {
-          res.json({ message: "No Device associated with this id!" });
-        }
-        return User.findOneAndUpdate(
-          { _id: params.userId },
-          { $pull: { devices: params.deviceId } },
-          { new: true }
-        );
-      })
-      .then((dbUserData) => {
-        if (!dbUserData) {
-          res.status(404).json({ message: "No pizza found with this id!" });
-          return;
+          res.json({ message: "No User associated with this id!" });
         }
         res.json(dbDeviceData);
       })
       .catch((err) => {
         console.log(err);
-        res.status(400).json(err);
+        res.status(500).json(err);
       });
   },
-};
+
+    deleteDevice({ params }, res) {
+      Device.findOneAndDelete({ _id: params.deviceId })
+        .then((dbDeviceData) => {
+          if (!dbDeviceData) {
+            return res.json({ message: "No Device associated with this id!" });
+          }
+          return User.findOneAndUpdate(
+            { _id: params.userId },
+            { $pull: { devices: params.deviceId } },
+            { new: true }
+          ).then((dbUserData) => {
+            if (!dbUserData) {
+              res.status(404).json({ message: "No pizza found with this id!" });
+              return;
+            }
+            res.json(dbDeviceData);
+          });
+        })
+        .catch((err) => {
+          console.log(err);
+          res.status(500).json(err);
+        });
+    },
+  };
+
+  // reference
+//   deleteDevice({ params }, res) {
+//     User.findOne({ _id: params.userId, devices: params.deviceId })
+//       .then((dbUserData) => {
+//         if (!dbUserData) {
+//           return res
+//             .status(404)
+//             .json({ message: "No user found with this id!" });
+//         }
+//         Device.findOneAndDelete({ _id: params.deviceId }).then(
+//           (dbDeviceData) => {
+//             if (!dbDeviceData) {
+//               return res.json({
+//                 message: "No Device associated with this id!",
+//               });
+//             }
+//             dbUserData.devices = dbUserData.devices.splice(
+//               dbUserData.devices.indexOf(params.deviceId),
+//               1
+//             );
+//             dbUserData.save().then(newUserData => {
+//               res.json(dbDeviceData);
+//             })
+//           }
+//         );
+//       })
+//       .catch((err) => {
+//         console.log(err);
+//         res.status(500).json(err);
+//       });
+//   },
+// };
 
 module.exports = deviceController;

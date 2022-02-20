@@ -123,7 +123,7 @@
                                                     placeholder="Please type your email" />
                                             </div>
                                             <div class="form-group">
-                                                <label for="phone">Phone number</label>
+                                                <label for="phone">Phone number (no hyphens) </label>
                                                 <input type="text" id="phone" name="phone" class="form-control" 
                                                     placeholder="Please type your phone number" />
                                             </div>
@@ -137,10 +137,10 @@
                                                     <label>How would you like to get paid?</label>
                                                 </div>
                                                 <select class="custom-select form-control" id="payment" name="payment">
-                                                    <option selected>Square (Cash App)</option>
-                                                    <option value="1">Cash</option>
-                                                    <option value="2">Paypal</option>
-                                                    <option value="3">Bitcoin</option>
+                                                    <option selected value= "Square">Square (Cash App)</option>
+                                                    <option value="Cash">Cash</option>
+                                                    <option value="Paypal">Paypal</option>
+                                                    <option value="Bitcoin">Bitcoin</option>
                                                 </select>
 
                                             </div>
@@ -255,7 +255,7 @@
 
     <script src="../assets/plugins/js/particles.min.js"></script>
     <!-- Custom Scripts-->
-    <script src="../../public/assets/js/add-user.js"></script>
+    <script src="/assets/js/add-user.js"></script>
     <script src="../assets/js/custom-scripts.js"></script>
     <script>
         $('.close-div').on('click', function () {

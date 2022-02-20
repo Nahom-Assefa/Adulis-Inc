@@ -17,16 +17,16 @@ function userSubmit(event) {
   const city = $userForm.querySelector("#city").value;
   const payPref = $userForm.querySelector("#payment").value;
 
-  if (!firstName || !lastName || !email || !phone || !payment) {
+  if (!firstName || !lastName || !email || !phoneNumber || !payPref) {
     return;
   }
 
   const formData = { firstName, lastName, email, phoneNumber, city, payPref };
 
-  fetch("api/users", {
-    method: "Post",
+  fetch("/api/users", {
+    method: 'Post',
     headers: {
-      Accept: "application/json",
+      "Accept": "application/json",
       "Content-Type": "application/json",
     },
     body: JSON.stringify(formData),
