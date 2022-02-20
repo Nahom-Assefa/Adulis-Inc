@@ -34,6 +34,10 @@ const userSchema = new Schema(
       enum: ["Square", "Cash", "Paypal", "Bitcoin"],
       default: "Cash",
     },
+    additionalComment: {
+      type: String,
+      maxlength: 140
+    },
     devices: [
       {
         type: Schema.Types.ObjectId,
