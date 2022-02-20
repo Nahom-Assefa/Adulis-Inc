@@ -28,6 +28,7 @@ function userSubmit(event) {
     .then((response) => response.json())
     .then((postResponse) => {
       alert("User created successfully!");
+      deviceSubmit(postResponse._id);
       console.log(postResponse);
     })
     .catch((err) => {
@@ -40,24 +41,22 @@ $userForm.addEventListener("submit", userSubmit);
 
 //================================================================================================
 
-function deviceSubmit(event) {
-    event.preventDefault();
-  
+function deviceSubmit(userId) {
     const brand = $userForm.querySelector("#brand").value;
-    const model = $userForm.querySelector("#model").value;
+    const modelName = $userForm.querySelector("#model").value;
     const imei = $userForm.querySelector("#imei").value;
     const carrier = $userForm.querySelector("#carrier").value;
     const storage = $userForm.querySelector("#storage").value;
     const condition = $userForm.querySelector("#condition").value;
   
-    if (!brand || !model || !imei || !carrier || !storage || !condition) {
+    if (!brand || !modelName || !imei || !carrier || !storage || !condition) {
       alert('You must provide input for all parts of the form!')
       return;
     }
   
-    const formData = { brand, model, imei, carrier, storage, condition };
+    const formData = { brand, modelName, imei, carrier, storage, condition };
   
-    fetch("/api/devices/userId", {
+    fetch(`/api/devices/${userId}`, {
       method: 'Post',
       headers: {
         "Accept": "application/json",
@@ -74,5 +73,3 @@ function deviceSubmit(event) {
         console.log(err);
       });
   }
-
-$userForm.addEventListener("submit", deviceSubmit);
