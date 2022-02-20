@@ -8,8 +8,6 @@ function userSubmit(event) {
   const email = $userForm.querySelector("#email").value;
   const phoneNumber = $userForm.querySelector("#phone").value;
 
-  console.log('what the fuck');
-
   if (!firstName || !lastName || !email || !phoneNumber) {
     alert('You must provide input for all parts of the form!')
     return;
