@@ -131,13 +131,13 @@
               Select your model from the following options.
             </p>
             <div class="col-md-6 mx-auto my-auto">
-              <form action="">
+              <form action="" id="device-form">
                 <div class="sell3--form">
                   <div class="form-group">
                     <div class="input-group-prepend">
                       <label>Select your storage</label>
                     </div>
-                    <select class="custom-select" id="inputGroupSelect01">
+                    <select class="custom-select" id="storage">
                       <option selected value="256GB">256 GB</option>
                       <option value="512GB">512 GB</option>
                     </select>
@@ -146,7 +146,7 @@
                     <div class="input-group-prepend">
                       <label>Select your carrier</label>
                     </div>
-                    <select class="custom-select" id="inputGroupSelect02">
+                    <select class="custom-select" id="carrier">
                       <option selected value="Verizon">Verizon</option>
                       <option value="T-Mobile">T-Mobile</option>
                       <option value="ATT">ATT</option>
@@ -159,7 +159,7 @@
                     <div class="input-group-prepend">
                       <label>Select your condition</label>
                     </div>
-                    <select class="custom-select" id="inputGroupSelect03">
+                    <select class="custom-select" id="condition">
                       <option selected value="New">New</option>
                       <option value="Used">Used</option>
                       <option value="Cracked">Cracked</option>
@@ -181,7 +181,7 @@
                     <label for="">Additonal comments</label>
                     <textarea
                       class="form-control"
-                      id="exampleFormControlTextarea1"
+                      name="comment-body"
                       rows="4"
                       cols="50"
                       placeholder="Additonal comments"
@@ -190,13 +190,13 @@
                   </div>
                   <div class="mt-4">
                     <a
-                      href=""
-                      data-toggle="modal"
-                      data-target="#form"
-                      class="btn btn-fill6 btn-block"
-                    >
-                      Get an offer</a
-                    >
+                    href=""
+                    data-toggle="modal"
+                    data-target="#form"
+                  > <button type="submit" class="btn btn-fill6 btn-block"
+                  id="form-submit">Get an offer</button>
+                    </a
+                  >
                   </div>
                 </div>
               </form>

@@ -89,7 +89,9 @@
                 <a class="nav-link" href="../../question.html">FAQs</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="../../work-with-us.html">Work with us </a>
+                <a class="nav-link" href="../../work-with-us.html"
+                  >Work with us
+                </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="../../social-responsibility.html"
@@ -131,13 +133,13 @@
               Select your model from the following options.
             </p>
             <div class="col-md-6 mx-auto my-auto">
-              <form action="">
+              <form action="" id="device-form">
                 <div class="sell3--form">
                   <div class="form-group">
                     <div class="input-group-prepend">
                       <label>Select your storage</label>
                     </div>
-                    <select class="custom-select" id="inputGroupSelect01">
+                    <select class="custom-select" id="storage">
                       <option selected value="128GB">128 GB</option>
                       <option value="512GB">512 GB</option>
                     </select>
@@ -146,7 +148,7 @@
                     <div class="input-group-prepend">
                       <label>Select your carrier</label>
                     </div>
-                    <select class="custom-select" id="inputGroupSelect02">
+                    <select class="custom-select" id="carrier">
                       <option selected value="Verizon">Verizon</option>
                       <option value="T-Mobile">T-Mobile</option>
                       <option value="ATT">ATT</option>
@@ -159,7 +161,7 @@
                     <div class="input-group-prepend">
                       <label>Select your condition</label>
                     </div>
-                    <select class="custom-select" id="inputGroupSelect03">
+                    <select class="custom-select" id="condition">
                       <option selected value="New">New</option>
                       <option value="Used">Used</option>
                       <option value="Cracked">Cracked</option>
@@ -181,7 +183,7 @@
                     <label for="">Additonal comments</label>
                     <textarea
                       class="form-control"
-                      id="exampleFormControlTextarea1"
+                      name="comment-body"
                       rows="4"
                       cols="50"
                       placeholder="Additonal comments"
@@ -189,14 +191,15 @@
                     ></textarea>
                   </div>
                   <div class="mt-4">
-                    <a
-                      href=""
-                      data-toggle="modal"
-                      data-target="#form"
-                      class="btn btn-fill6 btn-block"
-                    >
-                      Get an offer</a
-                    >
+                    <a href="" data-toggle="modal" data-target="#form">
+                      <button
+                        type="submit"
+                        class="btn btn-fill6 btn-block"
+                        id="form-submit"
+                      >
+                        Get an offer
+                      </button>
+                    </a>
                   </div>
                 </div>
               </form>
@@ -288,7 +291,11 @@
               <li><a href="../../about-us.html">About us</a></li>
               <li><a href="../../question.html">FAQs</a></li>
               <li><a href="../../work-with-us.html">Work with us</a></li>
-              <li><a href="../../social-responsibility.html">Social responsibility</a></li>
+              <li>
+                <a href="../../social-responsibility.html"
+                  >Social responsibility</a
+                >
+              </li>
             </ul>
           </div>
           <div class="col-sm-3">
