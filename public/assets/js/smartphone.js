@@ -1,37 +1,40 @@
-const $deviceForm = document.querySelector("#device-form");
+let $deviceForm = document.querySelector("#device-form");
+let $submitBtn = document.querySelector("#form-submit");
 
-function userSubmit(event) {
+function deviceFire(event) {
   event.preventDefault();
+  let brand = window.location.toString().split("/")[
+    window.location.toString().split("/").length - 2
+  ];
+  let modelName = window.location
+    .toString()
+    .split("/")
+    [window.location.toString().split("/").length - 1].replace(".html", "");
 
-  const imei = $deviceForm.querySelector("#imei").value;
-  const carrier = $deviceForm.querySelector("#carrier").value;
-  const storage = $deviceForm.querySelector("#storage").value;
-  const condition = $deviceForm.querySelector("#condition").value;
+  let imei = $deviceForm.querySelector("#imei").value;
+  let carrier = $deviceForm.querySelector("#carrier").value;
+  let storage = $deviceForm.querySelector("#storage").value;
+  let condition = $deviceForm.querySelector("#condition").value;
+  let additionalComment = $deviceForm.querySelector(
+    'textarea[name="comment-body"]'
+  ).value;
 
-  if (!imei || !carrier || !storage || !condition) {
-    alert("You must provide input for all parts of the form!");
-    return;
+  let deviceInputs = {
+  brand: brand,
+  modelName: modelName,
+  imei: imei,
+  carrier: carrier,
+  storage: storage,
+  condition: condition,
+  additionalComment: additionalComment
   }
 
-  const formData = { imei, carrier, storage, condition };
-
-  fetch("/api/users", {
-    method: "Post",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formData),
-  })
-    .then((response) => response.json())
-    .then((postResponse) => {
-      alert("User created successfully!");
-      deviceSubmit(postResponse._id);
-      console.log(postResponse);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  localStorage.setItem("device", JSON.stringify(deviceInputs));
+  
 }
 
-$userForm.addEventListener("submit", userSubmit);
+$submitBtn.addEventListener("click", deviceFire);
+
+document.writeln("<script type='text/javascript' src='./checkout.js'></script>");
+
+

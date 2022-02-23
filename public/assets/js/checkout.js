@@ -1,5 +1,7 @@
+// Store form in variable
 const $userForm = document.querySelector("#registration-checkout");
 
+// User submit function
 function userSubmit(event) {
   event.preventDefault();
 
@@ -11,16 +13,16 @@ function userSubmit(event) {
   const payPref = $userForm.querySelector("#payment").value;
 
   if (!firstName || !lastName || !email || !phoneNumber) {
-    alert('You must provide input for all parts of the form!');
+    alert("You must provide input for all parts of the form!");
     return;
   }
 
   const formData = { firstName, lastName, email, phoneNumber, city, payPref };
 
   fetch("/api/users", {
-    method: 'Post',
+    method: "Post",
     headers: {
-      "Accept": "application/json",
+      Accept: "application/json",
       "Content-Type": "application/json",
     },
     body: JSON.stringify(formData),
@@ -28,11 +30,40 @@ function userSubmit(event) {
     .then((response) => response.json())
     .then((postResponse) => {
       alert("User created successfully!");
-      console.log(postResponse);
+      let deviceData = JSON.parse(localStorage.getItem("device"));
+      deviceSubmit(deviceData, postResponse._id);
     })
     .catch((err) => {
       console.log(err);
     });
 }
 
+console.log("line 96", $userForm);
 $userForm.addEventListener("submit", userSubmit);
+
+//=========================================================================================
+
+// Device submit
+function deviceSubmit(deviceData, userId) {
+  if (deviceData.additionalComment === "") {
+    deviceData.additionalComment =
+      "No additional comments were provided by User";
+  }
+
+  fetch(`/api/devices/${userId}`, {
+    method: "Post",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(deviceData),
+  })
+    .then((response) => response.json())
+    .then((postResponse) => {
+      alert("Device created successfully!");
+      console.log(postResponse);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}

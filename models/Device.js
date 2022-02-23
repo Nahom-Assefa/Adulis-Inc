@@ -37,6 +37,10 @@ const DeviceSchema = new Schema(
       enum: ["New", "Used", "Cracked", "No Power", "Bad LCD"],
       default: "Used",
     },
+    additionalComment: {
+      type: String,
+      maxlength: 140
+    },
     createdAt: {
       type: Date,
       default: Date.now,
