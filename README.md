@@ -41,7 +41,7 @@ This project is licensed under the MIT license.
 
 ## Contributions
 
-This project was built by me with some contributions from Dino Aganovic a freelance designer on upwork, and Mistre Mulugeta a graphic designer that was on staff at Adulis with UI experience. As well as general business directives from CEO Aaron Mekonnen. While completing my full-stack certification at the University Of Minnesota I took this project on -which was static in nature- to include a backend and server-side components to highlight my skillset in this area.
+This project was built by me with some contributions from Dino Aganovic a freelance designer on upwork, and Mistre Mulugeta a graphic/UI designer that was on staff at Adulis at the time. As well as general business directives from CEO Aaron Mekonnen. While completing my full-stack certification at the University Of Minnesota I decided to push the bounds of this project a step further than previous to include a backend and server-side components to highlight my skillset in this area.
 
 ## Technologies
 
