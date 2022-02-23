@@ -21,7 +21,7 @@ Adulis was birthed from TradeFast, physical kiosks serving in the lower Twin Cit
 
 ## Installation
 
-Firstly install the NoSql database mongoDB on to your machine. 
+Firstly install the NoSql database mongoDB on to your machine. <br> 
 Windows guide: https://www.mongodb.com/try/download/community <br>
 Mac guide: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
 
