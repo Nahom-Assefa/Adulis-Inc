@@ -86,37 +86,4 @@ const deviceController = {
     },
   };
 
-  // reference
-//   deleteDevice({ params }, res) {
-//     User.findOne({ _id: params.userId, devices: params.deviceId })
-//       .then((dbUserData) => {
-//         if (!dbUserData) {
-//           return res
-//             .status(404)
-//             .json({ message: "No user found with this id!" });
-//         }
-//         Device.findOneAndDelete({ _id: params.deviceId }).then(
-//           (dbDeviceData) => {
-//             if (!dbDeviceData) {
-//               return res.json({
-//                 message: "No Device associated with this id!",
-//               });
-//             }
-//             dbUserData.devices = dbUserData.devices.splice(
-//               dbUserData.devices.indexOf(params.deviceId),
-//               1
-//             );
-//             dbUserData.save().then(newUserData => {
-//               res.json(dbDeviceData);
-//             })
-//           }
-//         );
-//       })
-//       .catch((err) => {
-//         console.log(err);
-//         res.status(500).json(err);
-//       });
-//   },
-// };
-
 module.exports = deviceController;
