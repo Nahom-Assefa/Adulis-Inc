@@ -22,7 +22,7 @@ Adulis was birthed from TradeFast, physical kiosks serving in the lower Twin Cit
 ## Installation
 
 Firstly install the NoSql database mongoDB on to your machine. 
-Windows guide: https://www.mongodb.com/try/download/community 
+Windows guide: https://www.mongodb.com/try/download/community <br>
 Mac guide: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
 
 Use "npm install" to install required modules for this application. Two notable packages for this project were mongoose as the document object mapper, and express.js for serving CRUD operations. In server.js file mongoose.connect will look for a database if it does not exist or create one for you. You're welcome to change the local MongoDB's server short-circuit as you see fit.
@@ -31,7 +31,7 @@ Use "npm install" to install required modules for this application. Two notable 
 
 Adulis is a web-app that allows one to sell electronic devices in various physical conditions for cash or cash-like equivalents. 
 
-Navigate through the tabs to learn more about how it works. Visit the sell table and go through the prompts to see a payout estimate for a particular device.
+Navigate through the tabs to learn more about how it works. Visit the sell tab and go through the prompts to see a payout estimate for a particular device.
 
 ## License
 
