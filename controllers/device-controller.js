@@ -12,7 +12,6 @@ const deviceController = {
   },
 
   getOneDevice({ params }, res) {
-    console.log(params);
     Device.findById({ _id: params.deviceId })
       .then((dbUserData) => {
         if (!dbUserData) {
@@ -27,7 +26,6 @@ const deviceController = {
   },
 
   addDevice({ params, body }, res) {
-    console.log("body/params", body, params);
     Device.create(body)
       .then(({ _id }) => {
         return User.findOneAndUpdate(
@@ -47,7 +45,6 @@ const deviceController = {
   },
 
   updateDevice({ params, body }, res) {
-    console.log(params);
     Device.findOneAndUpdate({ _id: params.deviceId }, body, { new: true })
       .then((dbDeviceData) => {
         if (!dbDeviceData) {
