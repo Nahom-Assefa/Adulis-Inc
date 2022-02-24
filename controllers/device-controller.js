@@ -1,4 +1,4 @@
-const { Device, User } = require("../models");
+const { Device, User } = require("../models/Index");
 
 const deviceController = {
   // get all devices
