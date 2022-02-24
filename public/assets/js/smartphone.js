@@ -1,6 +1,7 @@
 let $deviceForm = document.querySelector("#device-form");
 let $submitBtn = document.querySelector("#form-submit");
 
+// Capture device inputs and set to local storage
 function deviceFire(event) {
   event.preventDefault();
   let brand = window.location.toString().split("/")[

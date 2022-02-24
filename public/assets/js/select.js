@@ -1,5 +1,6 @@
 const $userForm = document.querySelector("#inquiry");
 
+// User capture from select.html page
 function userSubmit(event) {
   event.preventDefault();
 
@@ -39,6 +40,7 @@ $userForm.addEventListener("submit", userSubmit);
 
 //================================================================================================
 
+// device capture from select.html page
 function deviceSubmit(userId) {
     const brand = $userForm.querySelector("#brand").value;
     const modelName = $userForm.querySelector("#model").value;

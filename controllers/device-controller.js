@@ -1,6 +1,7 @@
 const { Device, User } = require("../models");
 
 const deviceController = {
+  // get all devices
   getAllDevices(req, res) {
     Device.find({})
       .then((dbDeviceData) => {
@@ -11,6 +12,7 @@ const deviceController = {
       });
   },
 
+  // get one device
   getOneDevice({ params }, res) {
     Device.findById({ _id: params.deviceId })
       .then((dbUserData) => {
@@ -25,6 +27,7 @@ const deviceController = {
       });
   },
 
+  // add device
   addDevice({ params, body }, res) {
     Device.create(body)
       .then(({ _id }) => {
@@ -44,6 +47,7 @@ const deviceController = {
       .catch((err) => res.status(500).json(err));
   },
 
+  // update device
   updateDevice({ params, body }, res) {
     Device.findOneAndUpdate({ _id: params.deviceId }, body, { new: true })
       .then((dbDeviceData) => {
@@ -58,29 +62,30 @@ const deviceController = {
       });
   },
 
-    deleteDevice({ params }, res) {
-      Device.findOneAndDelete({ _id: params.deviceId })
-        .then((dbDeviceData) => {
-          if (!dbDeviceData) {
-            return res.json({ message: "No Device associated with this id!" });
+  // delete a device
+  deleteDevice({ params }, res) {
+    Device.findOneAndDelete({ _id: params.deviceId })
+      .then((dbDeviceData) => {
+        if (!dbDeviceData) {
+          return res.json({ message: "No Device associated with this id!" });
+        }
+        return User.findOneAndUpdate(
+          { _id: params.userId },
+          { $pull: { devices: params.deviceId } },
+          { new: true }
+        ).then((dbUserData) => {
+          if (!dbUserData) {
+            res.status(404).json({ message: "No User found with this id!" });
+            return;
           }
-          return User.findOneAndUpdate(
-            { _id: params.userId },
-            { $pull: { devices: params.deviceId } },
-            { new: true }
-          ).then((dbUserData) => {
-            if (!dbUserData) {
-              res.status(404).json({ message: "No User found with this id!" });
-              return;
-            }
-            res.json(dbDeviceData);
-          });
-        })
-        .catch((err) => {
-          console.log(err);
-          res.status(500).json(err);
+          res.json(dbDeviceData);
         });
-    },
-  };
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  },
+};
 
 module.exports = deviceController;

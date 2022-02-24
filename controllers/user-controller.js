@@ -1,6 +1,8 @@
 const { User } = require("../models");
 
 const userController = {
+
+  // get all users
   getAllUsers(req, res) {
     User.find({})
       .populate({
@@ -17,6 +19,7 @@ const userController = {
       });
   },
 
+  // get one user
   getOneUser({ params }, res) {
     User.findById({ _id: params.id })
       .populate({
@@ -35,6 +38,7 @@ const userController = {
       });
   },
 
+  // create a user
   createUser({ body }, res) {
     User.create(body)
       .then((dbUserData) => {
@@ -46,6 +50,7 @@ const userController = {
       });
   },
 
+  // update a user
   updateUser({ params, body }, res) {
     console.log(params);
     User.findOneAndUpdate({ _id: params.id }, body, { new: true })
@@ -61,6 +66,7 @@ const userController = {
       });
   },
 
+  // delete a user
   deleteUser({ params }, res) {
     User.findOneAndDelete({ _id: params.id })
       .then((dbUserData) => {
