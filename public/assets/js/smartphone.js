@@ -6,7 +6,7 @@ function deviceFire(event) {
   event.preventDefault();
   let brand = window.location.href.toString().split("/")[
     window.location.href.toString().split("/").length - 2
-  ];
+  ].replace("-products", "");
   let modelName = window.location.href
     .toString()
     .split("/")
