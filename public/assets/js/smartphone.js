@@ -4,13 +4,13 @@ let $submitBtn = document.querySelector("#form-submit");
 // Capture device inputs and set to local storage
 function deviceFire(event) {
   event.preventDefault();
-  let brand = window.location.toString().split("/")[
-    window.location.toString().split("/").length - 2
+  let brand = window.location.href.toString().split("/")[
+    window.location.href.toString().split("/").length - 2
   ];
-  let modelName = window.location
+  let modelName = window.location.href
     .toString()
     .split("/")
-    [window.location.toString().split("/").length - 1].replace(".html", "");
+    [window.location.href.toString().split("/").length - 1].replace(".html", "");
 
   let imei = $deviceForm.querySelector("#imei").value;
   let carrier = $deviceForm.querySelector("#carrier").value;
