@@ -1,4 +1,4 @@
-const randomPrice = Math.floor(Math.random() * 600) + 100;
+const randomPrice = Math.floor(Math.random() * 400) + 120;
 
 const modalNumber = (document.querySelector(
   ".sell-card"
