@@ -36,6 +36,3 @@ function deviceFire(event) {
 
 $submitBtn.addEventListener("click", deviceFire);
 
-document.writeln("<script type='text/javascript' src='./checkout.js'></script>");
-
-
