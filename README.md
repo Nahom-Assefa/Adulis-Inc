@@ -5,6 +5,7 @@ A website developed for Adulis Incorporated. A start-up that used a dynamic web-
 ## Deployed
 https://adulis.herokuapp.com/
 
+## Screenshot
 ![Adulis Screenshot](/public/assets/images/sc-main.png)
 
 ## Table of Contents
