@@ -2,6 +2,9 @@
 A website developed for Adulis Incorporated. A start-up that used a dynamic web-application to serve the ever-growing used-smartphone market, and successfully launched its MVP in the greater Las Vegas metro area prior to pandemic era difficulties that affected scaling, and distribution culminating in dissolution. <br>
 (Incoporated in the State of Delware filing date: 02/19/2020 filing number: 7859612)
 
+## Deployed
+https://adulis.herokuapp.com/
+
 ![Adulis Screenshot](/public/assets/images/sc-main.png)
 
 ## Table of Contents
